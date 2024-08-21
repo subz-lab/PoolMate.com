@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offer Rides - Carpooling App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Pool-Matee</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="find-rides.html">Find Rides</a></li>
+                <li><a href="offer-rides.html" class="active">Offer Rides</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="hero">
+            <h2>Offer a Ride</h2>
+            <p>Share your ride and help others while earning benefits!</p>
+        </div>
+
+        <section class="form-container">
+            <form action="#" method="post" class="offer-ride-form">
+                <h2>Offer a Ride</h2>
+                <div class="form-group">
+                    <label for="from">From:</label>
+                    <input type="text" id="from" name="from" required>
+                </div>
+                <div class="form-group">
+                    <label for="to">To:</label>
+                    <input type="text" id="to" name="to" required>
+                </div>
+                <div class="form-group">
+                    <label for="date">Date:</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="time">Time:</label>
+                    <input type="time" id="time" name="time" required>
+                </div>
+                <div class="form-group">
+                    <label for="seats">Available Seats:</label>
+                    <input type="number" id="seats" name="seats" min="1" required>
+                </div>
+                <button type="submit" class="btn-primary">Offer Ride</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Carpooling App</p>
+    </footer>
