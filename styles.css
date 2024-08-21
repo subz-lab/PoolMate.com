@@ -1,0 +1,529 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    background-color: #000;
+    transition: background-color 0.3s ease;
+}
+
+/* Header Styles */
+header {
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+    color: #fff;
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background 0.3s ease;
+}
+
+header:hover {
+    background: rgba(0, 0, 0, 1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem; /* Larger font size for better visibility */
+    font-family: 'Zefani', sans-serif; /* Updated to use Zefani font */
+    text-transform: uppercase; /* Makes the text all uppercase */
+    letter-spacing: 2px; /* Adds space between letters */
+    position: relative;
+    padding: 0 1rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adds a subtle shadow to make text pop */
+    color: #ffcc00; /* Accent color */
+}
+
+header h1::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 0;
+    height: 4px;
+    background: #ffcc00; /* Accent color underline */
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+header h1:hover::before {
+    width: 100%;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffcc00;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh; /* Full viewport height */
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    padding: 0 1rem; /* Add padding to ensure text doesn't touch edges */
+    background-image: url('car.jpeg'); /* Path to your background image */
+    background-size: cover; /* Ensures the image covers the entire section */
+    background-position: center; /* Centers the image within the section */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed; /* Keeps the background image fixed during scroll */
+}
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)); /* Gradient overlay */
+    z-index: 1;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin: 0;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards 0.5s;
+    z-index: 2;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards 1s;
+    z-index: 2;
+}
+
+.hero-greeting {
+    font-size: 2rem; /* Adjust size as needed */
+    margin: 0;
+    font-family: 'Zefani', sans-serif; /* Ensure it matches the header font */
+    font-weight: 700; /* Bold weight */
+    color: #ffcc00; /* Accent color for visibility */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adds a shadow for better readability */
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+    animation-delay: 0.3s; /* Slight delay to appear before main text */
+    z-index: 2;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 0.75rem 2rem;
+    border-radius: 50px; /* Rounded button */
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0.5rem;
+    transition: background 0.3s ease, transform 0.3s ease;
+    z-index: 2;
+}
+
+.btn-primary {
+    background: #ffcc00;
+    color: #000;
+}
+
+.btn-primary:hover {
+    background: #e0b800;
+    transform: scale(1.05);
+}
+
+.btn-secondary {
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+.btn-secondary:hover {
+    background: rgba(0, 0, 0, 0.9);
+    border-color: #ffcc00;
+    transform: scale(1.05);
+}
+
+/* How It Works Section */
+.how-it-works {
+    padding: 4rem 2rem;
+    text-align: center;
+    background: #222;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem 0;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+.step:nth-child(1) {
+    animation-delay: 0.5s;
+}
+
+.step:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.step:nth-child(3) {
+    animation-delay: 1.5s;
+}
+
+.step-icon {
+    font-size: 4rem;
+    margin-right: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.step-icon:hover {
+    transform: rotate(360deg) scale(1.1);
+}
+
+.step-text {
+    max-width: 600px;
+    color: #ddd;
+}
+
+.step-text h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.5rem;
+}
+
+/* Contact Info Section */
+.contact-info {
+    background: #333;
+    padding: 2rem;
+    text-align: center;
+    margin: 1rem 0;
+    color: #ddd;
+}
+
+/* Footer Styles */
+footer {
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    transition: background 0.3s ease;
+}
+
+footer:hover {
+    background: rgba(0, 0, 0, 1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero-greeting {
+        font-size: 1.5rem; /* Adjust size for smaller screens */
+    }
+
+    .btn-primary, .btn-secondary {
+        padding: 0.5rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+}
+
+/* Centered Page Container */
+.page-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: #121212;
+    padding: 2rem;
+    color: #fff;
+}
+
+.page-content {
+    max-width: 600px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.page-content:hover {
+    background: rgba(0, 0, 0, 1);
+    transform: scale(1.03);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.8);
+}
+
+.page-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #ffcc00;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    letter-spacing: 1px;
+}
+
+.page-content p {
+    font-size: 1rem;
+    color: #ddd;
+    line-height: 1.8;
+}
+
+/* Buttons */
+.btn-primary {
+    background: #ffcc00;
+    color: #000;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background: #e0b800;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.btn-secondary {
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: rgba(0, 0, 0, 0.9);
+    border-color: #ffcc00;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="time"],
+input[type="number"] {
+    padding: 0.75rem;
+    border-radius: 8px;
+    border: 2px solid #444;
+    background: #222;
+    color: #fff;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+input[type="time"]:focus,
+input[type="number"]:focus {
+    border-color: #ffcc00;
+    background: #333;
+    outline: none;
+}
+
+/* How It Works Section */
+.how-it-works {
+    padding: 4rem 2rem;
+    text-align: center;
+    background: #222;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem 0;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+.step:nth-child(1) {
+    animation-delay: 0.5s;
+}
+
+.step:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.step:nth-child(3) {
+    animation-delay: 1.5s;
+}
+
+.step-icon {
+    font-size: 4rem;
+    margin-right: 1.5rem;
+    color: #ffcc00;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.step-icon:hover {
+    transform: rotate(360deg) scale(1.1);
+    color: #ffd700;
+}
+
+.step-text {
+    max-width: 600px;
+    color: #ddd;
+}
+
+.step-text h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+/* Contact Info Section */
+.contact-info {
+    background: #2b2b2b;
+    padding: 2rem;
+    text-align: center;
+    margin: 1rem 0;
+    color: #ddd;
+    border-radius: 10px;
+}
+
+/* Footer Styles */
+footer {
+    background: rgba(0, 0, 0, 0.85);
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+footer:hover {
+    background: rgba(0, 0, 0, 1);
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero-greeting {
+        font-size: 1.5rem;
+    }
+
+    .btn-primary, .btn-secondary {
+        padding: 0.5rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    .page-content {
+        padding: 1.5rem;
+        max-width: 100%;
+    }
+}
+nav ul li a {
+    pointer-events: auto; /* Ensure it can be clicked */
+}
