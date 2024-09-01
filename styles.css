@@ -8,77 +8,68 @@ body {
     background-color: #000;
     transition: background-color 0.3s ease;
 }
-
-/* Header Styles */
+/* General Header Styles */
 header {
     background: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
     color: #fff;
     padding: 1rem 2rem;
-    position: absolute;
     width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space between title and nav */
     transition: background 0.3s ease;
+    position: relative; /* Ensure header is in normal flow */
 }
 
+/* Header Hover Effect */
 header:hover {
-    background: rgba(0, 0, 0, 1);
+    background: rgba(0, 0, 0, 1); /* Darker background on hover */
 }
 
+/* Header Title */
 header h1 {
     margin: 0;
     font-size: 2.5rem; /* Larger font size for better visibility */
-    font-family: 'Zefani', sans-serif; /* Updated to use Zefani font */
-    text-transform: uppercase; /* Makes the text all uppercase */
-    letter-spacing: 2px; /* Adds space between letters */
-    position: absolute;
-    padding: 0 1rem;
-    transition: color 0.3s ease, transform 0.3s ease;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adds a subtle shadow to make text pop */
+    font-family: 'Zefani', sans-serif; /* Custom font */
+    text-transform: uppercase; /* Uppercase text */
+    letter-spacing: 2px; /* Space between letters */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Shadow for text visibility */
     color: #ffcc00; /* Accent color */
 }
 
-header h1::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -10px;
-    width: 0;
-    height: 4px;
-    background: #ffcc00; /* Accent color underline */
-    border-radius: 2px;
-    transition: width 0.3s ease;
+/* Navigation Styles */
+nav {
+    margin-left: auto; /* Push nav to the right */
 }
 
-header h1:hover::before {
-    width: 100%;
-}
-
+/* Navigation List */
 nav ul {
-    list-style: none;
+    list-style: none; /* Remove bullets */
     padding: 0;
     margin: 0;
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Center the items horizontally */
+    overflow-x: auto; /* Enable horizontal scrolling if necessary */
+    white-space: nowrap; /* Prevent wrapping of list items */
 }
 
+/* Navigation List Items */
 nav ul li {
-    margin: 0 1rem;
+    margin: 0 1rem; /* Space between items */
 }
 
+/* Navigation Links */
 nav ul li a {
     color: #fff;
     text-transform: uppercase;
     font-weight: bold;
     transition: color 0.3s ease;
+    text-decoration: none; /* Remove underline */
 }
 
+/* Navigation Links Hover Effect */
 nav ul li a:hover {
-    color: #ffcc00;
+    color: #ffcc00; /* Change color on hover */
 }
 
 /* Hero Section */
@@ -103,7 +94,7 @@ nav ul li a:hover {
 .hero::before {
     content: '';
     position: absolute;
-    top: 0;
+    top: 0px;;
     left: 0;
     width: 100%;
     height: 100%;
