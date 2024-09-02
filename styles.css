@@ -8,7 +8,8 @@ body {
     background-color: #000;
     transition: background-color 0.3s ease;
 }
-/* General Header Styles */
+
+/* Header Styles */
 header {
     background: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
     color: #fff;
@@ -17,61 +18,81 @@ header {
     display: flex;
     align-items: center; /* Center items vertically */
     justify-content: space-between; /* Space between title and nav */
-    transition: background 0.3s ease;
     position: relative; /* Ensure header is in normal flow */
+    transition: background 0.3s ease; /* Smooth background transition on hover */
 }
 
-/* Header Hover Effect */
 header:hover {
     background: rgba(0, 0, 0, 1); /* Darker background on hover */
 }
 
-/* Header Title */
 header h1 {
     margin: 0;
     font-size: 2.5rem; /* Larger font size for better visibility */
     font-family: 'Zefani', sans-serif; /* Custom font */
     text-transform: uppercase; /* Uppercase text */
     letter-spacing: 2px; /* Space between letters */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Shadow for text visibility */
+    text-shadow: 2px 2px 4px rgba(134, 141, 43, 0.5); /* Shadow for text visibility */
     color: #ffcc00; /* Accent color */
 }
-
-/* Navigation Styles */
-nav {
-    margin-left: auto; /* Push nav to the right */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    background: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    transform: translateX(-100%); /* Initially hidden off-screen */
+    transition: transform 0.3s ease;
+    z-index: 1000;
 }
 
-/* Navigation List */
-nav ul {
-    list-style: none; /* Remove bullets */
+#sidebar-toggle:checked + .sidebar {
+    transform: translateX(0); /* Slide in when checkbox is checked */
+}
+
+.sidebar ul {
+    list-style: none;
     padding: 0;
     margin: 0;
-    display: flex;
-    justify-content: center; /* Center the items horizontally */
-    overflow-x: auto; /* Enable horizontal scrolling if necessary */
-    white-space: nowrap; /* Prevent wrapping of list items */
+    width: 100%;
 }
 
-/* Navigation List Items */
-nav ul li {
-    margin: 0 1rem; /* Space between items */
+.sidebar ul li {
+    margin: 1rem 0;
 }
 
-/* Navigation Links */
-nav ul li a {
+.sidebar ul li a {
     color: #fff;
     text-transform: uppercase;
     font-weight: bold;
-    transition: color 0.3s ease;
-    text-decoration: none; /* Remove underline */
+    text-decoration: none;
+    display: block;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-align: center;
+    transition: background 0.3s ease;
 }
 
-/* Navigation Links Hover Effect */
-nav ul li a:hover {
-    color: #ffcc00; /* Change color on hover */
+.sidebar ul li a:hover {
+    background: #ffcc00;
+    color: #000;
 }
 
+.sidebar-toggle-label {
+    cursor: pointer;
+    font-size: 2rem;
+    color: #ffcc00;
+    background: none;
+    border: none;
+    padding: 0;
+    z-index: 1001;
+}
 /* Hero Section */
 .hero {
     position: relative;
@@ -90,11 +111,10 @@ nav ul li a:hover {
     background-repeat: no-repeat; /* Prevents the image from repeating */
     background-attachment: fixed; /* Keeps the background image fixed during scroll */
 }
-
 .hero::before {
     content: '';
     position: absolute;
-    top: 0px;;
+    top: 0;
     left: 0;
     width: 100%;
     height: 100%;
@@ -131,6 +151,7 @@ nav ul li a:hover {
     z-index: 2;
 }
 
+/* Buttons */
 .btn-primary, .btn-secondary {
     padding: 0.75rem 2rem;
     border-radius: 50px; /* Rounded button */
@@ -225,23 +246,6 @@ nav ul li a:hover {
     margin: 1rem 0;
     color: #ddd;
     border-radius: 10px;
-}
-
-/* Footer Styles */
-footer {
-    background: rgba(0, 0, 0, 0.85);
-    color: #fff;
-    text-align: center;
-    padding: 1rem 0;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    transition: background 0.3s ease, box-shadow 0.3s ease;
-}
-
-footer:hover {
-    background: rgba(0, 0, 0, 1);
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.7);
 }
 
 /* Animations */
@@ -370,59 +374,6 @@ footer:hover {
     background: rgba(0, 0, 0, 1);
     transform: scale(1.03);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.8);
-}
-
-.page-content h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: #ffcc00;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    letter-spacing: 1px;
-}
-
-.page-content p {
-    font-size: 1rem;
-    color: #ddd;
-    line-height: 1.8;
-}
-
-/* Buttons */
-.btn-primary {
-    background: #ffcc00;
-    color: #000;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 50px;
-    font-size: 1rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-}
-
-.btn-primary:hover {
-    background: #e0b800;
-    transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-}
-
-.btn-secondary {
-    background: rgba(0, 0, 0, 0.7);
-    color: #fff;
-    border: 2px solid #fff;
-    padding: 0.75rem 1.5rem;
-    border-radius: 50px;
-    font-size: 1rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.btn-secondary:hover {
-    background: rgba(0, 0, 0, 0.9);
-    border-color: #ffcc00;
-    transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
 /* Form Styles */
