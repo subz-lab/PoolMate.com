@@ -4,21 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pool-Matee</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <h1>Pool-Matee</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="register.html">Register</a></li>
-                <li><a href="find-rides.html">Find Rides</a></li>
-                <li><a href="offer-rides.html">Offer Rides</a></li>
-            </ul>
-        </nav>
+        <label for="sidebar-toggle" class="sidebar-toggle-label">&#9776;</label>
     </header>
+
+    <input type="checkbox" id="sidebar-toggle" />
+    <nav class="sidebar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="find-rides.html">Find Rides</a></li>
+            <li><a href="offer-rides.html">Offer Rides</a></li>
+        </ul>
+    </nav>
+
     <main>
         <div class="hero">
             <div class="hero-greeting">Hola APSIT</div>
@@ -28,7 +33,7 @@
             <a href="offer-rides.html" class="btn-secondary">Offer a Ride</a>
         </div>
 
-       <section class=    "how-it-works">
+        <section class="how-it-works">
             <h2>How It Works</h2>
             <div class="step">
                 <div class="step-icon">&#128663;</div>
@@ -51,17 +56,6 @@
                     <p>Meet your carpool partner and enjoy a comfortable and cost-effective journey.</p>
                 </div>
             </div>
-        </section>
-
-        <section class="contact-info">
-            <h2>Contact Us</h2>
-            <p>If you have any questions or need support, feel free to reach out to us:</p>
-            <p><strong>Email:</strong> support@carpoolingapp.com</p>
-            <p><strong>Phone:</strong> +1 234 567 890</p>
-        </section>
     </main>
-    <footer>
-        <p>&copy; 2024 Carpooling App</p>
-    </footer>
 </body>
 </html>
