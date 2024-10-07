@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Offer Rides - Pool-Matee</title>
+    <title>Register - Pool-Matee</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
     <link rel="stylesheet" href="styles.css">
     <style>
         header {
@@ -72,39 +73,48 @@
             </ul>
         </nav>
     </header>
-    
     <main>
         <div class="hero">
-            <h2>Offer a Ride</h2>
-            <p>Share your ride and help others while earning benefits!</p>
+            <h2>Create an Account</h2>
+            <p>Sign up to start carpooling with us!</p>
         </div>
 
         <section class="form-container">
-            <form action="#" method="post" class="offer-ride-form">
-                <h2>Offer a Ride</h2>
+            <form id="registration-form" action="#" method="post" class="register-form">
+                <h2>Register</h2>
                 <div class="form-group">
-                    <label for="from">From:</label>
-                    <input type="text" id="from" name="from" required>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
                 </div>
                 <div class="form-group">
-                    <label for="to">To:</label>
-                    <input type="text" id="to" name="to" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
                 </div>
                 <div class="form-group">
-                    <label for="date">Date:</label>
-                    <input type="date" id="date" name="date" required>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required minlength="8">
+                    <small class="password-guidelines">
+                        <ul>
+                            <li>At least 8 characters long</li>
+                            <li>Includes both uppercase and lowercase letters</li>
+                            <li>Contains at least one number</li>
+                            <li>Includes at least one special character (e.g., !@#$%^&*)</li>
+                        </ul>
+                    </small>
                 </div>
                 <div class="form-group">
-                    <label for="time">Time:</label>
-                    <input type="time" id="time" name="time" required>
+                    <label for="confirm-password">Confirm Password:</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+                    <small id="password-error" class="error-message"></small>
                 </div>
-                <div class="form-group">
-                    <label for="seats">Available Seats:</label>
-                    <input type="number" id="seats" name="seats" min="1" required>
-                </div>
-                <button type="submit" class="btn-primary">Offer Ride</button>
+                <button type="submit" class="btn-primary">Register</button>
             </form>
+        </section>
+
+        <section class="login-link">
+            <p>Already have an account? <a href="login.html">Login here</a></p>
         </section>
     </main>
 </body>
 </html>
+
