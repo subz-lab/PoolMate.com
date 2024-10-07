@@ -1,70 +1,110 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register - Carpooling App</title>
+    <title>Offer Rides - Pool-Matee</title>
     <link rel="stylesheet" href="styles.css">
-    <script defer src="validate.js"></script>
+    <style>
+        header {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px; /* Added padding for better spacing */
+            background-color: #090808; /* Header background color */
+            position: relative; /* Position relative for sidebar toggle */
+        }
+        .logo {
+            width: 50px; /* Adjust the size as needed */
+            height: auto; /* Maintains aspect ratio */
+            margin-right: 15px; /* Space between logo and text */
+        }
+        .sidebar-toggle-label {
+            cursor: pointer;
+            font-size: 24px; /* Hamburger icon size */
+            margin-left: auto; /* Align to the right */
+            color: white; /* Icon color */
+        }
+        h1 {
+            color: white; /* Header title color */
+            margin: 0; /* Remove default margin */
+        }
+        nav {
+            display: none; /* Initially hidden */
+        }
+        #sidebar-toggle:checked + nav {
+            display: block; /* Show navigation when checked */
+        }
+        nav ul {
+            list-style-type: none; /* Remove bullet points */
+            padding: 0;
+            background-color: #090808; /* Match the header background */
+            position: absolute; /* Position it relative to the header */
+            top: 60px; /* Below the header */
+            left: 0;
+            width: 100%; /* Full width */
+        }
+        nav ul li {
+            padding: 10px;
+            text-align: center; /* Center the text */
+        }
+        nav ul li a {
+            color: white; /* Link color */
+            text-decoration: none; /* Remove underline */
+        }
+        nav ul li a.active {
+            font-weight: bold; /* Highlight active link */
+        }
+    </style>
 </head>
 <body>
     <header>
+        <img src="carpool.png" alt="Pool-Matee Logo" class="logo">
         <h1>Pool-Matee</h1>
-        <nav>
+        <label for="sidebar-toggle" class="sidebar-toggle-label">&#9776;</label>
+        <input type="checkbox" id="sidebar-toggle" />
+        <nav class="sidebar">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="login.html">Login</a></li>
-                <li><a href="register.html" class="active">Register</a></li>
+                <li><a href="register.html">Register</a></li>
                 <li><a href="find-rides.html">Find Rides</a></li>
-                <li><a href="offer-rides.html">Offer Rides</a></li>
+                <li><a href="offer-rides.html" class="active">Offer Rides</a></li>
             </ul>
         </nav>
     </header>
+    
     <main>
         <div class="hero">
-            <h2>Create an Account</h2>
-            <p>Sign up to start carpooling with us!</p>
+            <h2>Offer a Ride</h2>
+            <p>Share your ride and help others while earning benefits!</p>
         </div>
 
         <section class="form-container">
-            <form id="registration-form" action="#" method="post" class="register-form">
-                <h2>Register</h2>
+            <form action="#" method="post" class="offer-ride-form">
+                <h2>Offer a Ride</h2>
                 <div class="form-group">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
+                    <label for="from">From:</label>
+                    <input type="text" id="from" name="from" required>
                 </div>
                 <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
+                    <label for="to">To:</label>
+                    <input type="text" id="to" name="to" required>
                 </div>
                 <div class="form-group">
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" required minlength="8">
-                    <small class="password-guidelines">
-                        <ul>
-                            <li>At least 8 characters long</li>
-                            <li>Includes both uppercase and lowercase letters</li>
-                            <li>Contains at least one number</li>
-                            <li>Includes at least one special character (e.g., !@#$%^&*)</li>
-                        </ul>
-                    </small>
+                    <label for="date">Date:</label>
+                    <input type="date" id="date" name="date" required>
                 </div>
                 <div class="form-group">
-                    <label for="confirm-password">Confirm Password:</label>
-                    <input type="password" id="confirm-password" name="confirm-password" required>
-                    <small id="password-error" class="error-message"></small>
+                    <label for="time">Time:</label>
+                    <input type="time" id="time" name="time" required>
                 </div>
-                <button type="submit" class="btn-primary">Register</button>
+                <div class="form-group">
+                    <label for="seats">Available Seats:</label>
+                    <input type="number" id="seats" name="seats" min="1" required>
+                </div>
+                <button type="submit" class="btn-primary">Offer Ride</button>
             </form>
         </section>
-
-        <section class="login-link">
-            <p>Already have an account? <a href="login.html">Login here</a></p>
-        </section>
     </main>
-    <footer>
-        <p>&copy; 2024 Carpooling App</p>
-    </footer>
 </body>
 </html>
