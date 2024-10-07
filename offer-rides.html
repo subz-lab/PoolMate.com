@@ -3,13 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Offer Rides - Carpooling App</title>
+    <title>Offer Rides - Pool-Matee</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        header {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px; /* Added padding for better spacing */
+            background-color: #090808; /* Header background color */
+            position: relative; /* Position relative for sidebar toggle */
+        }
+        .logo {
+            width: 50px; /* Adjust the size as needed */
+            height: auto; /* Maintains aspect ratio */
+            margin-right: 15px; /* Space between logo and text */
+        }
+        .sidebar-toggle-label {
+            cursor: pointer;
+            font-size: 24px; /* Hamburger icon size */
+            margin-left: auto; /* Align to the right */
+            color: white; /* Icon color */
+        }
+        h1 {
+            color: white; /* Header title color */
+            margin: 0; /* Remove default margin */
+        }
+        nav {
+            display: none; /* Initially hidden */
+        }
+        #sidebar-toggle:checked + nav {
+            display: block; /* Show navigation when checked */
+        }
+        nav ul {
+            list-style-type: none; /* Remove bullet points */
+            padding: 0;
+            background-color: #090808; /* Match the header background */
+            position: absolute; /* Position it relative to the header */
+            top: 60px; /* Below the header */
+            left: 0;
+            width: 100%; /* Full width */
+        }
+        nav ul li {
+            padding: 10px;
+            text-align: center; /* Center the text */
+        }
+        nav ul li a {
+            color: white; /* Link color */
+            text-decoration: none; /* Remove underline */
+        }
+        nav ul li a.active {
+            font-weight: bold; /* Highlight active link */
+        }
+    </style>
 </head>
 <body>
     <header>
+        <img src="carpool.png" alt="Pool-Matee Logo" class="logo">
         <h1>Pool-Matee</h1>
-        <nav>
+        <label for="sidebar-toggle" class="sidebar-toggle-label">&#9776;</label>
+        <input type="checkbox" id="sidebar-toggle" />
+        <nav class="sidebar">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="login.html">Login</a></li>
@@ -19,6 +72,7 @@
             </ul>
         </nav>
     </header>
+    
     <main>
         <div class="hero">
             <h2>Offer a Ride</h2>
@@ -52,6 +106,5 @@
             </form>
         </section>
     </main>
-    <footer>
-        <p>&copy; 2024 Carpooling App</p>
-    </footer>
+</body>
+</html>
