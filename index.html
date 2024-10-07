@@ -4,11 +4,183 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pool-Matee</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            background-color: #000;
+            transition: background-color 0.3s ease;
+        }
+        
+        header {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background-color: #090808; /* Change to your preferred color */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo {
+            width: 50px; /* Adjust the size as needed */
+            height: auto; /* Maintains aspect ratio */
+            margin-right: 10px; /* Space between logo and text */
+        }
+
+        /* Hero Section Styles */
+        .hero {
+            position: relative;
+            height: 80vh; /* Set a responsive height */
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            padding: 1rem; /* Responsive padding */
+            background-image: url('car.jpg'); /* Path to your background image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            /* Removed hover scaling effect */
+        }
+
+        .hero-greeting {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            animation: fadeIn 1s forwards;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin: 0.5rem 0;
+            animation: fadeIn 1s forwards 0.3s;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin: 1rem 0;
+            animation: fadeIn 1s forwards 0.5s;
+        }
+
+        /* Button Styles */
+        .btn-primary, .btn-secondary {
+            margin: 10px; /* Spacing between buttons */
+            padding: 10px 20px; /* Button padding */
+            color: white; /* Button text color */
+            border: none; /* No border */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor on hover */
+            text-decoration: none; /* Remove underline */
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: #ddb30c; /* Primary button color */
+        }
+
+        .btn-primary:hover {
+            background-color: #c5a30b; /* Darker shade on hover */
+            transform: scale(1.05); /* Scale effect on hover */
+        }
+
+        .btn-secondary {
+            background-color: #0d161e; /* Secondary button color */
+        }
+
+        .btn-secondary:hover {
+            background-color: #0b1317; /* Darker shade on hover */
+            transform: scale(1.05); /* Scale effect on hover */
+        }
+
+        /* Animation Keyframes */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Sidebar styles */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 250px;
+            background: rgba(0, 0, 0, 0.9);
+            color: #fff;
+            padding: 2rem;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+            z-index: 1000;
+        }
+
+        #sidebar-toggle:checked + .sidebar {
+            transform: translateX(0);
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar ul li {
+            margin: 1rem 0;
+        }
+
+        .sidebar ul li a {
+            color: #fff;
+            text-transform: uppercase;
+            text-decoration: none;
+            display: block;
+            padding: 0.5rem 1rem;
+            transition: background 0.3s ease;
+            border-radius: 5px;
+        }
+
+        .sidebar ul li a:hover {
+            background: #ffcc00;
+            color: #000;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 760px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            header h1 {
+                font-size: 2rem; /* Responsive font size */
+            }
+            .hero {
+                height: auto; /* Adjusts to content height */
+                padding: 2rem; /* Adjust padding for smaller screens */
+            }
+            .hero-greeting {
+                font-size: 2rem; /* Adjusted greeting size */
+            }
+            h2 {
+                font-size: 1.5rem; /* Responsive hero heading */
+            }
+            p {
+                font-size: 1rem; /* Responsive paragraph */
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
+        <img src="carpool.png" alt="Pool-Matee Logo" class="logo">
         <h1>Pool-Matee</h1>
         <label for="sidebar-toggle" class="sidebar-toggle-label">&#9776;</label>
     </header>
@@ -29,33 +201,7 @@
             <div class="hero-greeting">Hola APSIT</div>
             <h2>Welcome to the Carpooling App</h2>
             <p>Save money, reduce emissions, and meet new people by carpooling!</p>
-            <a href="find-rides.html" class="btn-primary">Find a Ride</a>
-            <a href="offer-rides.html" class="btn-secondary">Offer a Ride</a>
         </div>
-
-        <section class="how-it-works">
-            <h2>How It Works</h2>
-            <div class="step">
-                <div class="step-icon">&#128663;</div>
-                <div class="step-text">
-                    <h3>Search for Rides</h3>
-                    <p>Enter your starting point and destination to find available carpool options.</p>
-                </div>
-            </div>
-            <div class="step">
-                <div class="step-icon">&#128663;</div>
-                <div class="step-text">
-                    <h3>Book a Ride</h3>
-                    <p>Choose the ride that suits your schedule and book it easily through our platform.</p>
-                </div>
-            </div>
-            <div class="step">
-                <div class="step-icon">&#128663;</div>
-                <div class="step-text">
-                    <h3>Enjoy the Ride</h3>
-                    <p>Meet your carpool partner and enjoy a comfortable and cost-effective journey.</p>
-                </div>
-            </div>
     </main>
 </body>
 </html>
